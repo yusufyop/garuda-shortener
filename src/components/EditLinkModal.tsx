@@ -10,6 +10,7 @@ interface LinkItem {
   clicks: number;
   created_at: string;
   updated_at: string;
+  expires_at: string | null; // <-- TAMBAHKAN BARIS INI
 }
 
 interface Props {
@@ -23,7 +24,7 @@ export default function EditLinkModal({ link, onClose, onSave }: Props) {
   if (!isoString) return '';
   return isoString.slice(0, 16); // Ambil YYYY-MM-DDTHH:mm
 };
-  const [originalUrl, setOriginalUrl] = useState(link.original_url);
+  const [originalUrl, setOriginalUrl] = useState(link.original_url);  
 const [newShortCode, setNewShortCode] = useState(link.short_code);
 const [expiresAt, setExpiresAt] = useState(formatForInput(link.expires_at)); // Tambahkan ini
 const [loading, setLoading] = useState(false);

@@ -22,7 +22,7 @@ interface LinkItem {
   created_at: string;
   updated_at: string;
   tags: string[];
-  expires_at: string | null;
+  expires_at: string | null; // <-- PASTIKAN BARIS INI ADA
   is_active: boolean;
   health_status: number;
   last_health_check: string | null;
